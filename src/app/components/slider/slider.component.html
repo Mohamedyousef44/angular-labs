@@ -1,1 +1,15 @@
-<p>slider works!</p>
+<br><br>
+<div class="row flex-column justify-content-evenly align-items-center my-4">
+
+  <img [src]="imgPath" alt=" an image">
+
+  <div class="btnGroup d-flex justify-content-evenly align-items-center w-50 my-4" >
+
+    <app-button classExp="btn btn-primary" icon="<" (btnClick)="previous()"></app-button>
+    <app-button classExp="btn btn-success" icon=">"(btnClick)="next()"></app-button>
+    <app-button classExp="btn btn-warning" icon="Slide" (btnClick)="slide()"></app-button>
+    <app-button classExp="btn btn-danger" icon="Stop" (btnClick)="stop()"></app-button>
+
+  </div>
+
+</div>

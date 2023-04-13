@@ -1,1 +1,14 @@
-<p>input works!</p>
+
+<div class="row flex-column justify-content-evenly align-items-center my-4">
+
+  <input [(ngModel)]="name" class="w-50">
+
+  <p class="w-50 text-danger">Your Name: {{name}}</p>
+
+  <div class="w-50">
+
+    <app-button classExp = "btn btn-dark w-100" icon = 'Reset' (btnClick)="resetInput()"></app-button>
+
+  </div>
+
+</div>
