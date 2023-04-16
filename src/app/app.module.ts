@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { InputComponent } from './components/input/input.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { ButtonComponent } from './components/button/button.component';
+import { StudentComponent } from './components/student/student.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputComponent,
     SliderComponent,
-    ButtonComponent
+    ButtonComponent,
+    StudentComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
