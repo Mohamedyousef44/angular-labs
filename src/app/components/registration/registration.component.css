@@ -1,0 +1,15 @@
+.container{
+  min-height: 30vh;
+}
+
+
+.container input{
+  outline-color: cornflowerblue;
+  height: 40px;
+  padding: 0 4px;
+}
+
+.bcolor{
+  border-color: red;
+  outline-color: red;
+}

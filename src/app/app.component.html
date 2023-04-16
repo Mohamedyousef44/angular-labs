@@ -7,5 +7,7 @@
     <!-- second lab -->
     <app-slider></app-slider>
 
-
+    <!-- lab 3 -->
+    <app-registration (studentData)="getData($event)"></app-registration>
+    <app-student [students]="studentData"></app-student>
 </div>

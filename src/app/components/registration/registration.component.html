@@ -1,0 +1,15 @@
+<div class="container d-flex flex-column justify-content-evenly align-items-center">
+
+  <input class="w-50" type="text" placeholder="Name" [(ngModel)] = 'name' [ngClass]="{bcolor: name.length < 3 && name }">
+  <p *ngIf="name" [ngStyle]="{color: name.length < 3  ? 'red' : 'green'}">Name is {{name.length < 3  ? "invalid" : "valid"}}</p>
+
+  <input class="w-50" type="text" placeholder="Age" [(ngModel)] = 'age' [ngClass]="{bcolor: +age >= 40 }">
+  <p *ngIf="age" [ngStyle]="{color: +age >= 40 ? 'red' : 'green'}">Age is {{+age >= 40 ? "invalid" : "valid"}}</p>
+
+  <div class="w-25 d-flex justify-content-center align-items-center">
+
+    <app-button classExp="btn btn-dark w-100" icon="Add"  (btnClick)="addStudent()"></app-button>
+
+  </div>
+
+</div>
