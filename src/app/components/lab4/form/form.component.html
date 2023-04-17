@@ -1,0 +1,25 @@
+<div class="container cus-h d-flex justify-content-center align-items-center">
+  <form class="w-50" (ngSubmit)="show()" [formGroup]="ValidationForm">
+
+    <div class="mb-3">
+      <label for="Name" class="form-label">Name</label>
+      <input formControlName="name" type="text" class="form-control" id="Name">
+      <div class="form-text alert alert-danger py-2" *ngIf="!nameValid && ValidationForm.controls['name'].value">Name must more than 3 characters</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" >
+      <div class="form-text alert alert-danger py-2" *ngIf="!emailValid && ValidationForm.controls['email'].value">Email is required and must have @ character</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+      <div class="form-text alert alert-danger py-2" *ngIf="!passValid && ValidationForm.controls['password'].value">Password must be more than 8 digits and less than 10 digits</div>
+    </div>
+
+    <button type="submit" class="btn btn-dark w-25">Submit</button>
+
+  </form>
+</div>

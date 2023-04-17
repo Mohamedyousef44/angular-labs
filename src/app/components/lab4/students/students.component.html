@@ -1,0 +1,31 @@
+<div class="container cus-h justify-content-center align-items-center">
+
+  <table class="w-100 table table-striped table-hover">
+
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Age</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Class</th>
+        <th scope="col">GPA</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let student of students; index as i">
+        <th>{{i+1}}</th>
+        <td>{{student.name}}</td>
+        <td>{{student.email}}</td>
+        <td>{{student.age}}</td>
+        <td>{{student.gender}}</td>
+        <td>{{student.class}}</td>
+        <td>{{student.gpa}}</td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>
