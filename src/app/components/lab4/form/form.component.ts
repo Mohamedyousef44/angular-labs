@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl , FormGroup , Validators } from '@angular/forms';
+import { FormBuilder, FormControl , FormGroup , Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -8,13 +9,21 @@ import { FormControl , FormGroup , Validators } from '@angular/forms';
 })
 export class FormComponent {
 
-  ValidationForm = new FormGroup({
+  constructor(private fb: FormBuilder , private router: Router ){}
 
-    name:new FormControl(null , [Validators.required , Validators.minLength(3), Validators.maxLength(10) ]),
-    email:new FormControl(null , [Validators.email, Validators.required ]),
-    password:new FormControl(null , [Validators.required , Validators.minLength(8) , Validators.maxLength(12) ])
-
+  ValidationForm = this.fb.group({
+    name: [null , [Validators.required , Validators.minLength(3), Validators.maxLength(10) ] ],
+    email: [null, [Validators.email, Validators.required ]],
+    password: [null,[Validators.required , Validators.minLength(8) , Validators.maxLength(12) ]],
   })
+
+  // ValidationForm = new FormGroup({
+
+  //   name:new FormControl('' , [Validators.required , Validators.minLength(3), Validators.maxLength(10) ]),
+  //   email:new FormControl('' , [Validators.email, Validators.required ]),
+  //   password:new FormControl('' , [Validators.required , Validators.minLength(8) , Validators.maxLength(12) ])
+
+  // })
 
   get nameValid(){
     return this.ValidationForm.controls["name"].valid;
@@ -30,10 +39,11 @@ export class FormComponent {
 
   show(){
 
-    console.log(this.ValidationForm)
-    console.log(this.ValidationForm.controls["name"].valid)
-    console.log(this.ValidationForm.controls["email"].valid)
-    console.log(this.ValidationForm.controls["password"].valid)
+    console.log(this.router)
+
+    if(this.ValidationForm.valid)
+
+    this.router.navigate(['/'])
 
   }
 }
