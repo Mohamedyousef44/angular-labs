@@ -11,6 +11,7 @@
         <th scope="col">Gender</th>
         <th scope="col">Class</th>
         <th scope="col">GPA</th>
+        <th scope="col" colspan="3">Action</th>
       </tr>
     </thead>
 
@@ -23,6 +24,9 @@
         <td>{{student.gender}}</td>
         <td>{{student.class}}</td>
         <td>{{student.gpa}}</td>
+        <td><a href="" class="btn btn-success">edit</a></td>
+        <td><a routerLink="/student/{{student.id}}" class="btn btn-primary">show</a></td>
+        <td><a href="" class="btn btn-danger">delete</a></td>
       </tr>
     </tbody>
 

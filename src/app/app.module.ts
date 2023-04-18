@@ -15,6 +15,7 @@ import { StudentsComponent } from './components/lab4/students/students.component
 import { ProfileComponent } from './components/lab4/profile/profile.component';
 import { ErrorComponent } from './components/lab4/error/error.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
 
   ],
   providers: [],
