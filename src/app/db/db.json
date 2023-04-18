@@ -1,0 +1,11 @@
+{
+  "students": [
+
+    {"id":1,"name": "Mohamed" , "email": "mo2020@gmail.com" , "age": 15 , "gender": "M" , "class": 10 , "gpa": 3.74},
+    {"id":2,"name": "Rehab" , "email": "rehab@gmail.com" , "age": 13 , "gender": "F" , "class": 9 , "gpa": 3.73},
+    {"id":3,"name": "Shimaa" , "email": "shimaa@gmail.com" , "age": 16 , "gender": "F" , "class": 8 , "gpa": 3.44},
+    {"id":4,"name": "Rana" , "email": "rana@gmail.com" , "age": 20 , "gender": "F" , "class": 10 , "gpa": 3.33},
+    {"id":5,"name": "Marwan" , "email": "maro@gmail.com" , "age": 11 , "gender": "M" , "class": 7 , "gpa": 3.14},
+    {"id":6,"name": "Fathy" , "email": "fatouh@gmail.com" , "age": 14 , "gender": "M" , "class": 4 , "gpa": 3.05}
+  ]
+}
