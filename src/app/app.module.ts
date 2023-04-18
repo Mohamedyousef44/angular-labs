@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { InputComponent } from './components/input/input.component';
 import { SliderComponent } from './components/slider/slider.component';
@@ -17,6 +14,7 @@ import { FormComponent } from './components/lab4/form/form.component';
 import { StudentsComponent } from './components/lab4/students/students.component';
 import { ProfileComponent } from './components/lab4/profile/profile.component';
 import { ErrorComponent } from './components/lab4/error/error.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -38,15 +36,7 @@ import { ErrorComponent } from './components/lab4/error/error.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-
-      {path:'' , component: HomeComponent},
-      {path:'create' , component: FormComponent},
-      {path:'students' , component: StudentsComponent},
-      {path:'student/:id' , component: ProfileComponent},
-      {path:'**' , component: ErrorComponent},
-
-    ])
+    AppRoutingModule
 
   ],
   providers: [],
