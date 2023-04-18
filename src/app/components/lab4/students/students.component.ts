@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StudentsService } from 'src/app/students.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { StudentsService } from 'src/app/students.service';
 export class StudentsComponent implements OnInit{
 
   students: any;
-  constructor(public data: StudentsService){
+  id: any;
+  constructor(private data: StudentsService , private route: Router ){
 
   }
   ngOnInit(): void {
@@ -20,6 +22,15 @@ export class StudentsComponent implements OnInit{
         },
         error:(err)=>{console.log(err)}
       })
+  }
+
+  getID(data: any){
+    this.id = data
+  }
+
+  deleteStudent(){
+    this.data.delete(this.id).subscribe();
+    window.location.reload();
   }
 
 }

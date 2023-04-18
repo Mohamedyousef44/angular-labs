@@ -1,15 +1,6 @@
 {
   "students": [
     {
-      "id": 1,
-      "name": "ahmed",
-      "email": "hamada@gmail.com",
-      "age": 12,
-      "gender": "F",
-      "class": "10",
-      "gpa": 3
-    },
-    {
       "id": 2,
       "name": "Rehab",
       "email": "rehab@gmail.com",
@@ -17,15 +8,6 @@
       "gender": "F",
       "class": 9,
       "gpa": 3.73
-    },
-    {
-      "id": 3,
-      "name": "Shimaa",
-      "email": "shimaa@gmail.com",
-      "age": 16,
-      "gender": "F",
-      "class": 8,
-      "gpa": 3.44
     },
     {
       "id": 4,
@@ -53,24 +35,6 @@
       "gender": "M",
       "class": 4,
       "gpa": 3.05
-    },
-    {
-      "name": "hoda",
-      "email": "hoda@gmail.com",
-      "age": 15,
-      "class": "5",
-      "gpa": 3,
-      "gender": "M",
-      "id": 7
-    },
-    {
-      "name": "amira",
-      "email": "amira@gmail.com",
-      "age": 16,
-      "class": "6",
-      "gpa": 3,
-      "gender": "F",
-      "id": 8
     }
   ]
 }

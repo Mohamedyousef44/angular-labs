@@ -26,7 +26,7 @@ export class StudentsService {
     return this.client.put(this.Base_URL+'/'+id , student)
   }
 
-  delete(student: any){
-    return this.client.delete(this.Base_URL , student)
+  delete(id: any){
+    return this.client.delete(this.Base_URL+'/'+id )
   }
 }

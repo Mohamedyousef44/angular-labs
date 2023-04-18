@@ -71,6 +71,7 @@ export class FormComponent {
 
       console.log(this.studentData.create(this.student).subscribe())
       this.router.navigate(['/students'])
+      window.location.reload();
 
     }
 
