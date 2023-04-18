@@ -1,11 +1,11 @@
 <div class="container cus-h d-flex flex-column justify-content-center align-items-center">
   <h2 class="text-start w-100 mb-4">Create New Student</h2>
 
-  <form class="row w-75 mt-4" (ngSubmit)="show()" [formGroup]="ValidationForm">
+  <form class="row w-75 mt-4" (ngSubmit)="update()" [formGroup]="ValidationForm">
 
     <div class="mb-3 col-md-6">
       <label for="Name" class="form-label">Name</label>
-      <input formControlName="name" type="text" class="form-control" id="Name">
+      <input formControlName="name" type="text" class="form-control" id="Name" value="{{student.name}}">
       <div class="form-text alert alert-danger py-2" *ngIf="!nameValid && ValidationForm.controls['name'].value">Name must more than 3 characters</div>
     </div>
 
