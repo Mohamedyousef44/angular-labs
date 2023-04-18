@@ -16,6 +16,7 @@ export class StudentsComponent implements OnInit{
      this.data.all().subscribe({
         next:(data)=>{
             this.students = data;
+            console.log(this.students)
         },
         error:(err)=>{console.log(err)}
       })

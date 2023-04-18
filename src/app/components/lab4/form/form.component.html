@@ -1,25 +1,50 @@
-<div class="container cus-h d-flex justify-content-center align-items-center">
-  <form class="w-50" (ngSubmit)="show()" [formGroup]="ValidationForm">
+<div class="container cus-h d-flex flex-column justify-content-center align-items-center">
+  <h2 class="text-start w-100 mb-4">Create New Student</h2>
 
-    <div class="mb-3">
+  <form class="row w-75 mt-4" (ngSubmit)="show()" [formGroup]="ValidationForm">
+
+    <div class="mb-3 col-md-6">
       <label for="Name" class="form-label">Name</label>
       <input formControlName="name" type="text" class="form-control" id="Name">
       <div class="form-text alert alert-danger py-2" *ngIf="!nameValid && ValidationForm.controls['name'].value">Name must more than 3 characters</div>
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3 col-md-6">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" >
       <div class="form-text alert alert-danger py-2" *ngIf="!emailValid && ValidationForm.controls['email'].value">Email is required and must have @ character</div>
     </div>
 
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
-      <div class="form-text alert alert-danger py-2" *ngIf="!passValid && ValidationForm.controls['password'].value">Password must be more than 8 digits and less than 10 digits</div>
+    <div class="mb-3 col-md-6">
+      <label for="Age" class="form-label">Age</label>
+      <input formControlName="age" type="number" class="form-control" id="Age">
+      <div class="form-text alert alert-danger py-2" *ngIf="!ageValid && ValidationForm.controls['age'].value">Age must be in range of 6 to 18 years old</div>
     </div>
 
-    <button type="submit" class="btn btn-dark w-25">Submit</button>
+    <div class="mb-3 col-md-6">
+
+      <label for="Gender" class="form-label">Gender</label>
+      <select formControlName="gender" class="form-select" aria-label="Default select example">
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+      </select>
+
+    </div>
+
+    <div class="mb-3 col-md-6">
+      <label for="Class" class="form-label">Class</label>
+      <select formControlName="class" class="form-select" aria-label="Default select example">
+        <option *ngFor="let class of classes" value="{{class}}">{{class}}</option>
+      </select>
+    </div>
+
+    <div class="mb-3 col-md-6">
+      <label for="GPA" class="form-label">GPA</label>
+      <input formControlName="gpa" type="number" class="form-control" id="GPA">
+      <div class="form-text alert alert-danger py-2" *ngIf="!gpaValid && ValidationForm.controls['gpa'].value">GPA must be in range of 2.0 to 4.0</div>
+    </div>
+
+    <button type="submit" class="btn btn-dark col-12 my-3">Submit</button>
 
   </form>
 </div>

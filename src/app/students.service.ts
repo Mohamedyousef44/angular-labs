@@ -22,8 +22,8 @@ export class StudentsService {
     return this.client.post(this.Base_URL , student)
   }
 
-  update(student: any){
-    return this.client.put(this.Base_URL , student)
+  update(id: number,student: any){
+    return this.client.put(this.Base_URL+'/'+id , student)
   }
 
   delete(student: any){

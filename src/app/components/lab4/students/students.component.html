@@ -24,8 +24,8 @@
         <td>{{student.gender}}</td>
         <td>{{student.class}}</td>
         <td>{{student.gpa}}</td>
-        <td><a href="" class="btn btn-success">edit</a></td>
-        <td><a routerLink="/student/{{student.id}}" class="btn btn-primary">show</a></td>
+        <td><a routerLink="/students/edit/{{student.id}}" class="btn btn-success">edit</a></td>
+        <td><a routerLink="/students/{{student.id}}" class="btn btn-primary">show</a></td>
         <td><a href="" class="btn btn-danger">delete</a></td>
       </tr>
     </tbody>
