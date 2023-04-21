@@ -27,14 +27,6 @@ export class FormComponent {
 
   })
 
-  // ValidationForm = new FormGroup({
-
-  //   name:new FormControl('' , [Validators.required , Validators.minLength(3), Validators.maxLength(10) ]),
-  //   email:new FormControl('' , [Validators.email, Validators.required ]),
-  //   password:new FormControl('' , [Validators.required , Validators.minLength(8) , Validators.maxLength(12) ])
-
-  // })
-
   classes: number[]=[1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12]
 
   get nameValid(){
@@ -71,7 +63,7 @@ export class FormComponent {
 
       console.log(this.studentData.create(this.student).subscribe())
       this.router.navigate(['/students'])
-      window.location.reload();
+      // window.location.reload();
 
     }
 

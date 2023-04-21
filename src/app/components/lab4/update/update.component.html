@@ -1,17 +1,17 @@
 <div class="container cus-h d-flex flex-column justify-content-center align-items-center">
-  <h2 class="text-start w-100 mb-4">Create New Student</h2>
+  <h2 class="text-start w-100 mb-4">Update Current Student</h2>
 
-  <form class="row w-75 mt-4" (ngSubmit)="update()" [formGroup]="ValidationForm">
+  <form *ngIf="ValidationForm" class="row w-75 mt-4" (ngSubmit)="update()" [formGroup]="ValidationForm">
 
     <div class="mb-3 col-md-6">
       <label for="Name" class="form-label">Name</label>
-      <input formControlName="name" type="text" class="form-control" id="Name" value="{{student.name}}">
+      <input  formControlName="name" type="text" class="form-control" id="Name" >
       <div class="form-text alert alert-danger py-2" *ngIf="!nameValid && ValidationForm.controls['name'].value">Name must more than 3 characters</div>
     </div>
 
     <div class="mb-3 col-md-6">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" >
+      <input  formControlName="email" type="email" class="form-control" id="exampleInputEmail1">
       <div class="form-text alert alert-danger py-2" *ngIf="!emailValid && ValidationForm.controls['email'].value">Email is required and must have @ character</div>
     </div>
 
@@ -24,16 +24,16 @@
     <div class="mb-3 col-md-6">
 
       <label for="Gender" class="form-label">Gender</label>
-      <select formControlName="gender" class="form-select" aria-label="Default select example">
-        <option value="M">Male</option>
-        <option value="F">Female</option>
+      <select formControlName="gender" class="form-select">
+        <option value="M" [selected]="student.gender == 'M'">Male</option>
+        <option value="F" [selected]="student.gender == 'F'">Female</option>
       </select>
 
     </div>
 
     <div class="mb-3 col-md-6">
       <label for="Class" class="form-label">Class</label>
-      <select formControlName="class" class="form-select" aria-label="Default select example">
+      <select  formControlName="class" class="form-select" aria-label="Default select example">
         <option *ngFor="let class of classes" value="{{class}}">{{class}}</option>
       </select>
     </div>

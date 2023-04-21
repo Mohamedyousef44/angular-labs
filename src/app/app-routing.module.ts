@@ -6,7 +6,7 @@ import { FormComponent } from './components/lab4/form/form.component';
 import { StudentsComponent } from './components/lab4/students/students.component';
 import { ProfileComponent } from './components/lab4/profile/profile.component';
 import { ErrorComponent } from './components/lab4/error/error.component';
-import { UpdateComponent } from './db/components/lab4/update/update.component';
+import { UpdateComponent } from './components/lab4/update/update.component';
 
 
 const routes: Routes = [

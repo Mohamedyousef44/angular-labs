@@ -16,7 +16,8 @@ import { ProfileComponent } from './components/lab4/profile/profile.component';
 import { ErrorComponent } from './components/lab4/error/error.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { UpdateComponent } from './db/components/lab4/update/update.component';
+import { AboutComponent } from './components/about/about.component';
+import { UpdateComponent } from './components/lab4/update/update.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { UpdateComponent } from './db/components/lab4/update/update.component';
     StudentsComponent,
     ProfileComponent,
     ErrorComponent,
-    UpdateComponent
+    UpdateComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

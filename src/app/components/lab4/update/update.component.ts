@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { FormGroup , FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StudentsService } from 'src/app/students.service';
 
@@ -11,7 +11,8 @@ import { StudentsService } from 'src/app/students.service';
 export class UpdateComponent implements OnInit {
   id: any;
   student: any;
-  constructor(private fb: FormBuilder , private router: Router, private studentId: ActivatedRoute , private studentData: StudentsService ){
+  ValidationForm: any;
+  constructor(private router: Router, private studentId: ActivatedRoute , private studentData: StudentsService ){
     this.id = +this.studentId.snapshot.params['id']
   }
   ngOnInit(): void {
@@ -19,21 +20,22 @@ export class UpdateComponent implements OnInit {
     this.studentData.getOneById(this.id).subscribe({
 
       next: (data)=>{
+
         this.student = data;
+
+        this.ValidationForm = new FormGroup({
+
+          name: new FormControl(this.student.name , [Validators.required , Validators.minLength(3), Validators.maxLength(10)]),
+          email: new FormControl(this.student.email, [Validators.email, Validators.required]),
+          age: new FormControl(this.student.age,[Validators.required , Validators.min(6) , Validators.max(18)]),
+          gender: new FormControl(this.student.gender,Validators.required ),
+          gpa: new FormControl(this.student.gpa,[Validators.required , Validators.min(1) , Validators.max(4)]),
+          class: new FormControl(this.student.class,Validators.required),
+
+        })
       }
     })
   }
-
-  ValidationForm = this.fb.group({
-
-    name: [null , [Validators.required , Validators.minLength(3), Validators.maxLength(10)]],
-    email: [null, [Validators.email, Validators.required ]],
-    age: [null,[Validators.required , Validators.min(6) , Validators.max(18) ]],
-    gender: [null,Validators.required ],
-    gpa: [null,[Validators.required , Validators.min(2) , Validators.max(4)]],
-    class: [null,Validators.required],
-
-  })
 
   classes: number[]=[1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12]
 
@@ -59,7 +61,6 @@ export class UpdateComponent implements OnInit {
 
   update(){
 
-
     if(this.ValidationForm.valid){
 
       this.student.name = this.ValidationForm.controls['name'].value;
@@ -70,10 +71,8 @@ export class UpdateComponent implements OnInit {
       this.student.gpa = this.ValidationForm.controls['gpa'].value;
 
       console.log(this.studentData.update(this.id,this.student).subscribe())
-      this.router.navigate(['/students'])
+      this.router.navigate(['/students']);
     }
-
-
   }
 
 }
